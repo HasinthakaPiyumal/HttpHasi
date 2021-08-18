@@ -17,18 +17,19 @@ HTTP/1.1 200 OK
 """
 
 print("Enter Url : 127.0.0.1:2002 in your browser \n\n")
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind((HOST, PORT))
-    s.listen()
-    conn, addr = s.accept()
-    with conn:
-        browser_request = conn.recv(2**10).decode('utf-8')  #Meken Wenne Browser Eken Ewana Message eka(HTTP Request Eka) Variable ekakata Aragena Decode Karagannawa
-        print(browser_request)                              #Variable eka print karanawa
-        print('Connected by', addr)                         #HTTP Request eka ewapu IP_address ekai Port ekai print karanwa
-            
-        conn.send(response.encode('utf-8'))               #Response kiyana variable eke value eka aragena ENCODE karala Browser ekata yawanawa
+while True:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind((HOST, PORT))
+        s.listen()
+        conn, addr = s.accept()
+        with conn:
+            browser_request = conn.recv(2**10).decode('utf-8')  #Meken Wenne Browser Eken Ewana Message eka(HTTP Request Eka) Variable ekakata Aragena Decode Karagannawa
+            print(browser_request)                              #Variable eka print karanawa
+            print('Connected by', addr)                         #HTTP Request eka ewapu IP_address ekai Port ekai print karanwa
 
-s.close()
+            conn.send(response.encode('utf-8'))               #Response kiyana variable eke value eka aragena ENCODE karala Browser ekata yawanawa
+
+        s.close()
 
 
 
