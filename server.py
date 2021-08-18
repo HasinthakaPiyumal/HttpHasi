@@ -23,14 +23,13 @@ while True:
         s.listen()
         conn, addr = s.accept()
         with conn:
+
             browser_request = conn.recv(2**10).decode('utf-8')  #Meken Wenne Browser Eken Ewana Message eka(HTTP Request Eka) Variable ekakata Aragena Decode Karagannawa
             print(browser_request)                              #Variable eka print karanawa
             print('Connected by', addr)                         #HTTP Request eka ewapu IP_address ekai Port ekai print karanwa
-
-            conn.send(response.encode('utf-8'))               #Response kiyana variable eke value eka aragena ENCODE karala Browser ekata yawanawa
-
-        s.close()
-
+            
+            conn.send(response.encode('utf-8'))                 #Response kiyana variable eke value eka aragena ENCODE karala Browser ekata yawanawa
+    s.close()
 
 
 
