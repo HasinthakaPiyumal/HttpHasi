@@ -2,8 +2,9 @@ import socket
 import os
 
 HOST = ''
+print('Start')
 PORT = int(os.environ.get("PORT", 8080))
-
+print(port)
 #Response Message Eka
 response = """\
 HTTP/1.1 200 OK
