@@ -3,7 +3,7 @@ import os
 
 HOST = ''
 print('Start')
-PORT = int(os.environ.get("PORT", 8990))
+PORT = int(os.environ.get("PORT"))
 print(PORT)
 #Response Message Eka
 response = """\
