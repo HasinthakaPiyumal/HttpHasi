@@ -3,8 +3,8 @@ import os
 
 HOST = ''
 print('Start')
-PORT = int(os.environ.get("PORT", 8080))
-print(port)
+PORT = int(os.environ.get("PORT", 8990))
+print(PORT)
 #Response Message Eka
 response = """\
 HTTP/1.1 200 OK
