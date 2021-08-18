@@ -26,7 +26,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(browser_request)                              #Variable eka print karanawa
         print('Connected by', addr)                         #HTTP Request eka ewapu IP_address ekai Port ekai print karanwa
             
-        conn.send(response.encode('utf-8'))                 #Response kiyana variable eke value eka aragena ENCODE karala Browser ekata yawanawa
+        conn.send(response.encode('utf-8'))               #Response kiyana variable eke value eka aragena ENCODE karala Browser ekata yawanawa
+        conn.close()
+        s.close()
 
 
 
